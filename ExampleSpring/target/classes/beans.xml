@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--    setter & getter injection -->
+    <bean id="student" class="com.example.ExampleSpring.Student">
+        <property name="name" value="Kakashi_Hatake"></property>
+        <property name="rollno" value="201"></property>
+    </bean>
+<!--    nested setter getter Dependency injection of bean -->
+    <bean id="shape" class="com.example.ExampleSpring.Shape">
+        <property name="triangle" ref="triangle"></property>
+        <property name="square" ref="square"></property>
+    </bean>
+
+    <bean id="triangle" class="com.example.ExampleSpring.Triangle"></bean>
+    <bean id="square" class="com.example.ExampleSpring.Square"></bean>
+
+<!--    constructor Dependency injection of bean-->
+    <bean id="peple" class="com.example.ExampleSpring.Peple">
+        <constructor-arg value="Naruto" ></constructor-arg>
+        <constructor-arg value="303" ></constructor-arg>
+    </bean>
+</beans>
