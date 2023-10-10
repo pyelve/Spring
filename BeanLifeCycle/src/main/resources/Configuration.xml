@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+    <!-- bean definitions here -->
+<context:annotation-config />
+    <!--By xml configuration-->
+<bean class="org.example.Burger" name="burger" init-method="init" destroy-method="destroy">
+    <property name="price" value="120" />
+</bean>
+
+<!--    By using interfaces -->
+    <bean class="org.example.Vadapav" name="vadapav" init-method="afterPropertiesSet" destroy-method="destroy" >
+    <property name="price" value="15"/>
+    </bean>
+
+<!--    By Annotations-->
+    <bean class="org.example.Samosa" name="samosa" >
+        <property name="price" value="20" />
+    </bean>
+</beans>
