@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd"> <!-- bean definitions here -->
+
+    <bean id="emp" class="org.example.Employee">
+        <property name="empName" value="Kakashi"/>
+        <property name="empID" value="461"/>
+        <property name="projectCode" >
+        <util:list>
+            <value>10789</value>
+            <value>35672</value>
+        </util:list>
+        </property>
+        <property name="profileName">
+            <util:set>
+                <value>"Developer"</value>
+                <value>"TechLead"</value>
+            </util:set>
+        </property>
+        <property name="project">
+            <util:map>
+                <entry key="IBM" value="4Months"></entry>
+                <entry key="Swiggy" value="6Months"></entry>
+            </util:map>
+        </property>
+    </bean>
+</beans>
